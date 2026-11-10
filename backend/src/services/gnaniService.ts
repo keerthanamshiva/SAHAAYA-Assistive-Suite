@@ -1,10 +1,12 @@
+import ffmpegPath from 'ffmpeg-static';
 import { spawn } from 'node:child_process';
 import { env } from '../config/env.js';
 const convertAudioToWav = (input: Buffer): Promise<Buffer> => {
   return new Promise((resolve, reject) => {
-    const ffmpegPath = process.env.FFMPEG_PATH || 'ffmpeg';
+    const executablePath: string =
+  process.env.FFMPEG_PATH || (ffmpegPath as unknown as string) || 'ffmpeg';
 
-    const ffmpeg = spawn(ffmpegPath, [
+    const ffmpeg = spawn(executablePath, [
       '-hide_banner',
       '-loglevel', 'error',
       '-i', 'pipe:0',
