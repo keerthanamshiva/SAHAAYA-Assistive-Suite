@@ -1,0 +1,501 @@
+.sc-page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 28px;
+  color: #202638;
+}
+
+.sc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.sc-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: #7771d9;
+}
+
+.sc-header h1 {
+  font-size: 34px;
+  margin: 7px 0;
+}
+
+.sc-header p,
+.sc-input-card p {
+  color: #73798a;
+  margin: 0;
+}
+
+.sc-status {
+  color: #18865a;
+  background: #e7f8ef;
+  padding: 10px 14px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sc-input-card,
+.sc-player-card {
+  background: white;
+  border: 1px solid #e8eaf1;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: 0 5px 22px rgba(35, 40, 70, 0.04);
+}
+
+.sc-input-card h2,
+.sc-player-card h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.sc-input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.sc-input-row input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px;
+  border: 1px solid #dfe2eb;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.sc-input-row input:focus {
+  border-color: #7771d9;
+}
+
+.sc-input-row button,
+.sc-controls button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sc-convert,
+.sc-primary {
+  background: #625bd1;
+  color: white;
+}
+
+.sc-mic {
+  background: #fff0f0;
+  color: #c34c58;
+}
+
+.sc-mic.listening {
+  background: #c34c58;
+  color: white;
+}
+
+.sc-supported {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.sc-supported button {
+  border: 1px solid #e7e7f0;
+  background: #f8f8fc;
+  padding: 9px 13px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.sc-supported button:hover {
+  border-color: #7771d9;
+  background: #f0efff;
+}
+
+.sc-status-message {
+  min-height: 20px;
+  margin-top: 13px;
+  font-size: 13px;
+  color: #686d80;
+}
+
+.sc-player-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sc-counter {
+  background: #f0efff;
+  color: #625bd1;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sc-stage {
+  min-height: 340px;
+  margin-top: 20px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #f3f2ff, #edf6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.sc-avatar {
+  width: 180px;
+  height: 230px;
+  position: relative;
+  transform-origin: center bottom;
+}
+
+.sc-head {
+  position: absolute;
+  z-index: 3;
+  top: 3px;
+  left: 60px;
+  width: 65px;
+  height: 75px;
+  border-radius: 45% 45% 48% 48%;
+  background: #d99a73;
+  box-shadow: inset -7px -4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.sc-eyes {
+  position: absolute;
+  top: 29px;
+  left: 16px;
+  display: flex;
+  gap: 19px;
+}
+
+.sc-eyes span {
+  width: 5px;
+  height: 6px;
+  border-radius: 50%;
+  background: #252525;
+}
+
+.sc-smile {
+  position: absolute;
+  width: 17px;
+  height: 8px;
+  left: 24px;
+  top: 48px;
+  border-bottom: 2px solid #6c302a;
+  border-radius: 50%;
+}
+
+.sc-neck {
+  position: absolute;
+  top: 70px;
+  left: 82px;
+  width: 22px;
+  height: 24px;
+  background: #d99a73;
+}
+
+.sc-body {
+  position: absolute;
+  left: 40px;
+  top: 87px;
+  width: 100px;
+  height: 120px;
+  border-radius: 28px 28px 12px 12px;
+  background: linear-gradient(120deg, #7771d9, #5049a7);
+}
+
+.sc-arm {
+  position: absolute;
+  top: 8px;
+  width: 22px;
+  height: 92px;
+  border-radius: 20px;
+  background: #d99a73;
+  transform-origin: top center;
+}
+
+.sc-left-arm {
+  left: -13px;
+  transform: rotate(18deg);
+}
+
+.sc-right-arm {
+  right: -13px;
+  transform: rotate(-18deg);
+}
+
+.sc-hand {
+  position: absolute;
+  bottom: -20px;
+  left: -9px;
+  font-size: 29px;
+  transform-origin: center;
+}
+
+.sc-gesture-label {
+  text-align: center;
+  margin-top: -5px;
+}
+
+.sc-gesture-label span {
+  font-size: 22px;
+}
+
+.sc-gesture-label h3 {
+  margin: 5px 0;
+  font-size: 19px;
+}
+
+.sc-gesture-label p {
+  margin: 0;
+  color: #777;
+  font-size: 12px;
+}
+
+.sc-empty {
+  text-align: center;
+  color: #777;
+}
+
+.sc-empty-icon {
+  font-size: 48px;
+}
+
+.sc-empty h3 {
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.sc-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.sc-controls button {
+  background: #f0eff8;
+  color: #484568;
+  min-width: 100px;
+}
+
+.sc-controls button.sc-primary {
+  background: #625bd1;
+  color: white;
+}
+
+.sc-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.sc-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.sc-sequence span {
+  padding: 8px 13px;
+  border-radius: 20px;
+  background: #f0f0f5;
+  color: #777;
+  font-size: 12px;
+}
+
+.sc-sequence span.active {
+  background: #625bd1;
+  color: white;
+}
+
+.sc-disclaimer {
+  padding: 15px;
+  background: #fff8e9;
+  border: 1px solid #f4e4b9;
+  color: #826b34;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Different illustrative movements */
+
+.gesture-hello.sc-animate .sc-right-arm {
+  animation: hello-wave 0.55s ease-in-out 0s 4 alternate;
+}
+
+.gesture-hello.sc-animate .sc-hand {
+  animation: hand-wave 0.35s ease-in-out 0s 6 alternate;
+}
+
+.gesture-thankyou.sc-animate .sc-right-arm {
+  animation: thank-move 1.1s ease-in-out 2;
+}
+
+.gesture-thankyou.sc-animate .sc-left-arm {
+  animation: thank-left 1.1s ease-in-out 2;
+}
+
+.gesture-help.sc-animate .sc-left-arm {
+  animation: help-move 0.8s ease-in-out 0s 3 alternate;
+}
+
+.gesture-help.sc-animate .sc-right-arm {
+  animation: help-right 0.8s ease-in-out 0s 3 alternate;
+}
+
+.gesture-yes.sc-animate .sc-head {
+  animation: nod 0.5s ease-in-out 0s 4;
+}
+
+.gesture-yes.sc-animate .sc-right-arm {
+  animation: yes-move 0.5s ease-in-out 0s 4 alternate;
+}
+
+.gesture-no.sc-animate .sc-head {
+  animation: shake 0.4s ease-in-out 0s 5;
+}
+
+.gesture-no.sc-animate .sc-right-arm {
+  animation: no-move 0.6s ease-in-out 0s 3 alternate;
+}
+
+.gesture-water.sc-animate .sc-right-arm {
+  animation: water-move 0.7s ease-in-out 0s 3 alternate;
+}
+
+.gesture-water.sc-animate .sc-hand {
+  animation: water-hand 0.5s ease-in-out 0s 4 alternate;
+}
+
+.gesture-please.sc-animate .sc-left-arm,
+.gesture-please.sc-animate .sc-right-arm {
+  animation: please-move 0.9s ease-in-out 0s 3 alternate;
+}
+
+.gesture-goodbye.sc-animate .sc-right-arm {
+  animation: goodbye-move 0.55s ease-in-out 0s 4 alternate;
+}
+
+.gesture-goodbye.sc-animate .sc-hand {
+  animation: hand-wave 0.35s ease-in-out 0s 6 alternate;
+}
+
+@keyframes hello-wave {
+  from { transform: rotate(-115deg); }
+  to { transform: rotate(-155deg); }
+}
+
+@keyframes hand-wave {
+  from { rotate: -20deg; }
+  to { rotate: 25deg; }
+}
+
+@keyframes thank-move {
+  from { transform: rotate(-20deg); }
+  to { transform: rotate(-75deg); }
+}
+
+@keyframes thank-left {
+  from { transform: rotate(20deg); }
+  to { transform: rotate(75deg); }
+}
+
+@keyframes help-move {
+  from { transform: rotate(-18deg); }
+  to { transform: rotate(-100deg); }
+}
+
+@keyframes help-right {
+  from { transform: rotate(18deg); }
+  to { transform: rotate(100deg); }
+}
+
+@keyframes nod {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes yes-move {
+  from { transform: rotate(-20deg); }
+  to { transform: rotate(-65deg); }
+}
+
+@keyframes shake {
+  0%, 100% { rotate: 0deg; }
+  25% { rotate: -12deg; }
+  75% { rotate: 12deg; }
+}
+
+@keyframes no-move {
+  from { transform: rotate(-15deg); }
+  to { transform: rotate(-90deg); }
+}
+
+@keyframes water-move {
+  from { transform: rotate(-20deg); }
+  to { transform: rotate(-110deg); }
+}
+
+@keyframes water-hand {
+  from { transform: scale(1); }
+  to { transform: scale(0.75); }
+}
+
+@keyframes please-move {
+  from { transform: rotate(20deg); }
+  to { transform: rotate(-50deg); }
+}
+
+@keyframes goodbye-move {
+  from { transform: rotate(-100deg); }
+  to { transform: rotate(-155deg); }
+}
+
+@media (max-width: 650px) {
+  .sc-page {
+    padding: 15px;
+  }
+
+  .sc-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sc-input-card,
+  .sc-player-card {
+    padding: 17px;
+  }
+
+  .sc-input-row {
+    flex-direction: column;
+  }
+
+  .sc-input-row button {
+    width: 100%;
+  }
+
+  .sc-stage {
+    min-height: 320px;
+  }
+}

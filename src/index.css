@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  --color-teal-deep: #176B67;
+  --color-teal-secondary: #2E8580;
+  --color-teal-sage: #DCECE7;
+  --color-bg: #F8FAF8;
+  --color-text: #202C2B;
+  --color-secondary: #687775;
+  --color-border: #E5ECE9;
+  --color-accent: #E8B86D;
+  --color-white: #FFFFFF;
+  --font-size-base: 1rem;
+}
+
+/* High contrast overrides */
+.high-contrast {
+  --color-bg: #000000;
+  --color-text: #FFFFFF;
+  --color-secondary: #CCCCCC;
+  --color-border: #FFFFFF;
+  --color-teal-sage: #1a1a1a;
+}
+
+/* Font size adjustments */
+.font-lg { font-size: 1.125rem !important; }
+.font-xl { font-size: 1.25rem !important; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.reduced-motion *, .reduced-motion *::before, .reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-[#F8FAF8] text-[#202C2B] font-sans antialiased;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2;
+    outline: 2px solid var(--color-teal-deep);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-200;
+    background-color: var(--color-teal-deep);
+    min-height: 48px;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-teal-secondary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(23, 107, 103, 0.25);
+  }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-200;
+    background-color: transparent;
+    color: var(--color-teal-deep);
+    border: 1.5px solid var(--color-teal-deep);
+    min-height: 48px;
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-teal-sage);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-200;
+    color: var(--color-secondary);
+    min-height: 44px;
+  }
+  .btn-ghost:hover {
+    background-color: var(--color-teal-sage);
+    color: var(--color-teal-deep);
+  }
+
+  .card {
+    @apply rounded-2xl bg-white border transition-all duration-200;
+    border-color: var(--color-border);
+    box-shadow: 0 1px 4px rgba(23, 107, 103, 0.06);
+  }
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(23, 107, 103, 0.12);
+    border-color: #c5ddd8;
+  }
+
+  .card-feature {
+    @apply rounded-2xl bg-white border p-6 cursor-pointer transition-all duration-200;
+    border-color: var(--color-border);
+    box-shadow: 0 1px 4px rgba(23, 107, 103, 0.06);
+  }
+  .card-feature:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(23, 107, 103, 0.12);
+    border-color: #c5ddd8;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl px-4 py-3 text-sm transition-all duration-200;
+    border: 1.5px solid var(--color-border);
+    background-color: white;
+    color: var(--color-text);
+    min-height: 48px;
+  }
+  .input-field:focus {
+    outline: none;
+    border-color: var(--color-teal-deep);
+    box-shadow: 0 0 0 3px rgba(23, 107, 103, 0.1);
+  }
+
+  .label {
+    @apply block text-sm font-medium mb-1.5;
+    color: var(--color-text);
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium;
+    background-color: var(--color-teal-sage);
+    color: var(--color-teal-deep);
+  }
+
+  .demo-banner {
+    @apply flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium;
+    background-color: #FEF3C7;
+    color: #92400E;
+    border: 1px solid #FDE68A;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold mb-1;
+    color: var(--color-text);
+  }
+  .section-subtitle {
+    @apply text-sm mb-6;
+    color: var(--color-secondary);
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-150;
+    color: var(--color-secondary);
+  }
+  .sidebar-link:hover {
+    background-color: var(--color-teal-sage);
+    color: var(--color-teal-deep);
+  }
+  .sidebar-link.active {
+    background-color: var(--color-teal-sage);
+    color: var(--color-teal-deep);
+    font-weight: 600;
+  }
+
+  .bottom-nav-item {
+    @apply flex flex-col items-center gap-1 py-2 px-3 rounded-xl text-xs font-medium transition-all duration-150;
+    color: var(--color-secondary);
+    min-width: 48px;
+  }
+  .bottom-nav-item.active {
+    color: var(--color-teal-deep);
+  }
+
+  .pulse-ring {
+    @apply absolute inset-0 rounded-full animate-ping opacity-20;
+    background-color: var(--color-teal-deep);
+  }
+
+  .disclaimer {
+    @apply flex items-start gap-2 p-4 rounded-xl text-sm;
+    background-color: #FEF3C7;
+    color: #92400E;
+    border: 1px solid #FDE68A;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c5ddd8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2E8580; }
+
+/* Recording pulse animation */
+@keyframes recordingPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(239, 68, 68, 0); }
+}
+.recording-pulse {
+  animation: recordingPulse 1.5s ease-in-out infinite;
+}
+
+/* Transcript bubble animation */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-slide-in {
+  animation: fadeSlideIn 0.3s ease-out;
+}
+
+/* Smooth page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
